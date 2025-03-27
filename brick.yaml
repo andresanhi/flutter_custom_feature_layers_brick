@@ -1,0 +1,39 @@
+name: custom_feature
+description: Generates a Flutter feature with layered architecture.
+
+version: 0.1.0+1
+
+environment:
+  mason: ^0.1.1
+
+vars:
+  name:
+    type: string
+    description: Feature name
+    default: feature
+    prompt: What is your feature name?
+  
+  suffix:
+    type: enum
+    description: Select favorite suffix
+    default: page
+    prompt: Choose a favorite suffix (page or screen)
+    values:
+      - page
+      - screen
+
+  stateManagement:
+    type: enum
+    description: Select state management
+    default: none
+    prompt: Choose state management (bloc, cubit or none)
+    values:
+      - bloc
+      - cubit
+      - none
+
+  useRepository:
+    type: boolean
+    description: Use repository pattern
+    default: false
+    prompt: Do you want to use repository pattern?

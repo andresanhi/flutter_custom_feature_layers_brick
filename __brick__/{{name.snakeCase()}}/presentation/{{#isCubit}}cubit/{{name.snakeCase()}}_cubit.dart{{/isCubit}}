@@ -1,0 +1,18 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:meta/meta.dart';
+
+part '{{name.snakeCase()}}_state.dart';
+
+class {{name.pascalCase()}}Cubit extends Cubit<{{name.pascalCase()}}State> {
+  {{name.pascalCase()}}Cubit() : super({{name.pascalCase()}}Initial());
+
+  Future<void> init() async {
+    try {
+      emit({{name.pascalCase()}}Loading());
+      // TODO: Implement feature logic
+      emit({{name.pascalCase()}}Loaded());
+    } catch (e) {
+      emit({{name.pascalCase()}}Error(e.toString()));
+    }
+  }
+}
